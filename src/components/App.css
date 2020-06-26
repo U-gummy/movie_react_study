@@ -1,0 +1,36 @@
+.App {display:flex;flex-direction:column;}
+.container {display:flex;flex-direction:row;}
+.content {width:80%;padding:20px;height: calc(100vh - 70px);overflow:auto;}
+.btn {background:transparent;border:1px solid #aaa;padding:10px 30px;}
+input {width:80%;height:40px;text-indent:10px;}
+form input {margin-top:20px;}
+form input:first-child {margin-top:0;}
+/*HEADER*/
+.header {display:flex;align-items:center;height:70px;border-bottom:1px solid #000;}
+.header > a {display:flex;flex:2;justify-content:center;}
+.header .form-search {display:flex;flex:6;justify-content:center;}
+.header .btn-box {display:flex;flex:2;justify-content:center;}
+.h-search + .btn {border-left:0;}
+
+/*NAVI*/
+.navi {width:20%;height:calc(100vh - 70px);border-right:1px solid #000;}
+
+/*CONTENT*/
+/*login*/
+.login-form {display:flex;flex-direction:column;width:70%;margin:0 auto;}
+.login-form input {width:100%;}
+.btn-login {margin-top:20px;}
+.btn-join {width:100%;margin-top:20px;}
+
+
+.movie-main-content {display:flex;padding:15px;flex-direction:column;width:100%;height:400px;}
+.movie-main-content .title {display:flex;align-items: flex-end; flex:7;font-size:25px;}
+.movie-main-content .desc {flex:3;margin-top:10px;padding:10px;background-color:rgba(0,0,0,0.4);color:#fff;overflow: hidden;text-overflow: ellipsis;display: -webkit-box; -webkit-line-clamp:5; -webkit-box-orient: vertical; word-wrap:break-word; line-height: 1.35em; height: 5em;}
+
+.movie-list {display:flex;height:150px;padding:10px 0;border-bottom:1px solid #aaa;}
+.movie-list .movie-img {flex:3;margin-right:20px;background-size:cover;background-repeat:no-repeat;background-position:center;}
+.movie-list .movie-info {flex:7;}
+.movie-list .title {font-size:20px;}
+.movie-list .desc {margin-top:15px;overflow: hidden;text-overflow: ellipsis;display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; word-wrap:break-word; line-height: 1.2em; height: 5em;}
+
+
