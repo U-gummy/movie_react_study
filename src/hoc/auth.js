@@ -5,8 +5,6 @@ import Axios from "axios"
 import { withRouter } from "react-router-dom"
 export default function (Component, option) {
     function GetUserInfo(props) {
-        // const [UserInfo, setUserInfo] = useState(null)
-
         useEffect(() => {
             Axios.get("/admin/auth")
                 .then(function (response) {
@@ -25,7 +23,7 @@ export default function (Component, option) {
                         }
                     }
                 })
-        }, []).Axios
+        }, [])
         return <Component {...props} />
     }
 
