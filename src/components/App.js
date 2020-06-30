@@ -18,8 +18,9 @@ import {
 } from "react-router-dom"
 // import Auth from "../hoc/auth"
 import "antd/dist/antd.css"
-import { Layout } from "antd"
+import { Layout, BackTop } from "antd"
 import { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons"
+import DetailPage from "./views/DetailPage/DetailPage"
 
 const { Header, Sider, Content } = Layout
 
@@ -55,9 +56,15 @@ function App() {
                             <Content className="site-layout-background">
                                 <div className="container">
                                     <div className="content">
-                                        <Route exact path="/">
-                                            <LanderPage></LanderPage>
-                                        </Route>
+                                        <Route
+                                            exact
+                                            path="/"
+                                            component={LanderPage}
+                                        />
+                                        <Route
+                                            path="/detail/:movId"
+                                            component={DetailPage}
+                                        />
                                         <Route
                                             exact
                                             path="/favorites"
@@ -70,6 +77,9 @@ function App() {
                                         />
                                     </div>
                                 </div>
+                                <BackTop>
+                                    <div className="btn-top">TOP</div>
+                                </BackTop>
                             </Content>
                         </Layout>
                     </Layout>

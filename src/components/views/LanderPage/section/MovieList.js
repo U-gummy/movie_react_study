@@ -1,18 +1,39 @@
-import React from 'react'
-import { IMAGE_BASE_URL } from '../../../Config';
+/** @format */
 
+import React from "react"
+import { IMAGE_BASE_URL } from "../../../Config"
+import { withRouter } from "react-router-dom"
+import { Rate } from "antd"
 function MovieList(props) {
-    // console.log("MovieList",props.movieInfo);
+    function onClickDetailPage(e) {
+        props.history.push(`/detail/${e.target.parentNode.dataset.id}`)
+    }
     return (
-        <div className="movie-list">
-            <div className="movie-img" style={{backgroundImage:`url(${IMAGE_BASE_URL}w300/${props.movieInfo.backdrop_path})`}}>
-            </div>
+        <div
+            className="movie-list"
+            onClick={onClickDetailPage}
+            data-id={props.movieInfo.id}
+        >
+            <div
+                className="movie-img"
+                style={{
+                    backgroundImage: `url(${IMAGE_BASE_URL}w300/${props.movieInfo.backdrop_path})`,
+                }}
+            ></div>
             <div className="movie-info">
-                <strong className="title">{props.movieInfo.original_title}</strong>
+                <strong className="title">
+                    {props.movieInfo.original_title}
+                </strong>
                 <p className="desc">{props.movieInfo.overview}</p>
+            </div>
+            <div className="rate-box">
+                <Rate
+                    disabled
+                    defaultValue={props.movieInfo.vote_average / 2}
+                />
             </div>
         </div>
     )
 }
 
-export default MovieList
+export default withRouter(MovieList)

@@ -7,9 +7,6 @@ import { Menu } from "antd"
 import { HomeOutlined, UserOutlined, StarOutlined } from "@ant-design/icons"
 
 function Navi() {
-    function handleClick(e) {
-        console.log("click ", e)
-    }
     return (
         <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
             <Menu.Item key="1" icon={<HomeOutlined />}>

@@ -6,6 +6,7 @@ import { API_URL, API_KEY } from "../../Config"
 import MovieList from "./section/MovieList"
 import Axios from "axios"
 import { Tabs, Row, Col, Button } from "antd"
+import { Link } from "react-router-dom"
 
 const { TabPane } = Tabs
 
@@ -42,10 +43,10 @@ function LanderPage(props) {
     function getMovieList(_Page) {
         const endpoint = `${API_URL}movie/${TabKey}?api_key=${API_KEY}&page=${_Page}`
         Axios.get(endpoint).then(function (response) {
-            setMainMovieImage(response.data.results[0])
             if (_Page > 1) {
                 setMainMovieList([...MainMovieList, ...response.data.results])
             } else {
+                setMainMovieImage(response.data.results[0])
                 setMainMovieList([...response.data.results])
             }
             setPage(Number(response.data.page) + 1)
@@ -77,10 +78,10 @@ function LanderPage(props) {
                                                 <Col
                                                     key={idx}
                                                     xs={24}
-                                                    sm={12}
-                                                    md={8}
+                                                    sm={24}
+                                                    md={12}
                                                     lg={8}
-                                                    xl={6}
+                                                    xl={8}
                                                 >
                                                     <MovieList
                                                         movieInfo={item}
