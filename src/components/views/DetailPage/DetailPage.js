@@ -13,23 +13,45 @@ const { TabPane } = Tabs
 
 function DetailPage(props) {
     const [MainMovie, setMainMovie] = useState(null)
+    const [CreditsInfo, setCreditsInfo] = useState(null)
+    const [Videos, setVideos] = useState(null)
+    const [Similar, setSimilar] = useState(null)
     const movId = props.match.params.movId
-    const endpoint = `${API_URL}movie/${movId}?api_key=${API_KEY}`
-
+    const endpoint = `${API_URL}movie/${movId}?api_key=${API_KEY}&language=ko`
+    const credits = `${API_URL}movie/${movId}/credits?api_key=${API_KEY}&language=ko`
+    const videos = `${API_URL}movie/${movId}/videos?api_key=${API_KEY}&language=ko`
+    const similar = `${API_URL}movie/${movId}/similar?api_key=${API_KEY}&language=ko`
+    // /credits
     useEffect(function () {
         Axios.get(endpoint).then(function (response) {
-            console.log(response.data)
             setMainMovie(response.data)
         })
+        Axios.get(credits).then(function (response) {
+            setCreditsInfo(response.data)
+        })
+        Axios.get(videos).then(function (response) {
+            setVideos(response.data)
+        })
+        Axios.get(similar).then(function (response) {
+            console.log("similar", response.data)
+            setSimilar(response.data)
+        })
     }, [])
-
     let tabList = [
         {
             name: "영화상세정보",
-            component: <MovieDetail data={MainMovie} />,
+            component: Videos && (
+                <MovieDetail data={MainMovie} dataVideos={Videos} />
+            ),
         },
-        { name: "출연진", component: <Cast /> },
-        { name: "유사 영화", component: <SimilarMovies /> },
+        {
+            name: "출연진",
+            component: CreditsInfo && <Cast data={CreditsInfo} />,
+        },
+        {
+            name: "유사 영화",
+            component: Similar && <SimilarMovies data={Similar} />,
+        },
     ]
     return (
         <div className="movie-detail-content">
@@ -37,13 +59,14 @@ function DetailPage(props) {
                 <DetailMainVisual data={MainMovie}></DetailMainVisual>
             )}
             <Tabs defaultActiveKey="0">
-                {tabList.map(function (item, idx) {
-                    return (
-                        <TabPane tab={item.name} key={idx}>
-                            {item.component}
-                        </TabPane>
-                    )
-                })}
+                {MainMovie &&
+                    tabList.map(function (item, idx) {
+                        return (
+                            <TabPane tab={item.name} key={idx}>
+                                {item.component}
+                            </TabPane>
+                        )
+                    })}
             </Tabs>
         </div>
     )

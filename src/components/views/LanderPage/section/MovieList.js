@@ -7,6 +7,7 @@ import { Rate } from "antd"
 function MovieList(props) {
     function onClickDetailPage(e) {
         props.history.push(`/detail/${e.target.parentNode.dataset.id}`)
+        props.history.go()
     }
     return (
         <div
@@ -26,7 +27,7 @@ function MovieList(props) {
                 </strong>
                 <p className="desc">{props.movieInfo.overview}</p>
             </div>
-            <div className="rate-box">
+            <div className="hover-box">
                 <Rate
                     disabled
                     defaultValue={props.movieInfo.vote_average / 2}

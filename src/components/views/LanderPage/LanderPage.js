@@ -41,7 +41,7 @@ function LanderPage(props) {
     )
 
     function getMovieList(_Page) {
-        const endpoint = `${API_URL}movie/${TabKey}?api_key=${API_KEY}&page=${_Page}`
+        const endpoint = `${API_URL}movie/${TabKey}?api_key=${API_KEY}&page=${_Page}&language=ko`
         Axios.get(endpoint).then(function (response) {
             if (_Page > 1) {
                 setMainMovieList([...MainMovieList, ...response.data.results])
