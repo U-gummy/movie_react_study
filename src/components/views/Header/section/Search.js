@@ -1,29 +1,13 @@
 /** @format */
 
-import React from "react"
-import { Input } from "antd"
-import { AudioOutlined } from "@ant-design/icons"
+// import React from "react"
+// import { Input } from "antd"
 
-function Search() {
-    const { Search } = Input
+// function Search() {
 
-    const suffix = (
-        <AudioOutlined
-            style={{
-                fontSize: 16,
-                color: "#1890ff",
-            }}
-        />
-    )
-    return (
-        <form className="form-search">
-            <Search
-                placeholder="input search text"
-                onSearch={(value) => console.log(value)}
-                style={{ width: 200 }}
-            />
-        </form>
-    )
-}
+//     return (
 
-export default Search
+//     )
+// }
+
+// export default Search

@@ -8,7 +8,7 @@ function MainMovie(props) {
         <div
             className="movie-main-content"
             style={{
-                background: `url(${IMAGE_BASE_URL}w1280/${props.mainImage.backdrop_path})`,
+                backgroundImage: `url(${IMAGE_BASE_URL}w1280/${props.mainImage.backdrop_path})`,
             }}
         >
             <div className="movie-main-text-box">

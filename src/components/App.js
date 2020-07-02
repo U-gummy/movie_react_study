@@ -7,8 +7,9 @@ import Logo from "./views/Header/section/Logo"
 import Navi from "./views/Navi/Navi"
 import CHeader from "./views/Header/Header"
 import FavoritesPage from "./views/FavoritesPage/FavoritesPage"
+import SearchPage from "./views/SearchPage/SearchPage"
 import MyPage from "./views/MyPage/MyPage"
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import { HashRouter as Router, Switch, Route } from "react-router-dom"
 import "antd/dist/antd.css"
 import { Layout, BackTop } from "antd"
 import { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons"
@@ -16,7 +17,7 @@ import DetailPage from "./views/DetailPage/DetailPage"
 const { Header, Sider, Content } = Layout
 
 function App() {
-    const [Collapsed, setCollapsed] = useState(false)
+    const [Collapsed, setCollapsed] = useState(true)
     function toggle() {
         setCollapsed(!Collapsed)
     }
@@ -24,7 +25,15 @@ function App() {
         <div className="App">
             <Router>
                 <Layout>
-                    <Sider trigger={null} collapsible collapsed={Collapsed}>
+                    <Sider
+                        trigger={null}
+                        collapsible
+                        collapsed={Collapsed}
+                        collapsedWidth="0"
+                        onClick={function () {
+                            setCollapsed(!Collapsed)
+                        }}
+                    >
                         <Logo></Logo>
                         <Navi></Navi>
                     </Sider>
@@ -53,6 +62,10 @@ function App() {
                                     component={FavoritesPage}
                                 />
                                 <Route path="/mypage" component={MyPage} />
+                                <Route
+                                    path="/search/:searchWord"
+                                    component={SearchPage}
+                                />
                             </Switch>
                             <BackTop>
                                 <div className="btn-top">TOP</div>

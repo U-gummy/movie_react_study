@@ -77,10 +77,10 @@ function LanderPage(props) {
                                                 <Col
                                                     key={idx}
                                                     xs={24}
-                                                    sm={24}
-                                                    md={12}
-                                                    lg={8}
-                                                    xl={8}
+                                                    sm={12}
+                                                    md={8}
+                                                    lg={6}
+                                                    xl={6}
                                                 >
                                                     <MovieList
                                                         movieInfo={item}

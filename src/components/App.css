@@ -12,7 +12,7 @@ li {list-style: none;}
 .login-form input {width:100%;}
 .btn-join {width:100%;margin-top:20px;}
 
-.movie-main-content {display:flex;padding:15px;flex-direction:column;justify-content: flex-end; width:100%;height:400px;}
+.movie-main-content {display:flex;padding:15px;flex-direction:column;justify-content: flex-end; width:100%;height:400px;background-size:cover;background-position:center;}
 .movie-main-text-box {padding:10px 20px;background-color:rgba(0,0,0,0.5);}
 .movie-main-text-box .title {font-size:25px;color:#fff;}
 .movie-main-text-box .desc {padding-top:10px;color:#fff;overflow: hidden;text-overflow: ellipsis;font-size:16px; display: -webkit-box; -webkit-line-clamp:3; -webkit-box-orient: vertical; word-wrap:break-word; line-height: 1.35em; height: 4.6em;}
@@ -33,10 +33,10 @@ li {list-style: none;}
 
 .detail-main-visual {position:relative;background:#000;}
 .detail-main-visual .bg-content {width:100%;height:500px;background-size:cover;background-position:center;opacity:0.3;}
-.detail-main-visual .title {position: absolute;left:50px;top:50px;width:calc(100% - 350px);font-size:60px;color:#fff;}
+.detail-main-visual .title {position: absolute;left:50px;top:50px;right:50px;width:calc(100% - 350px);font-size:60px;color:#fff;text-overflow: ellipsis;display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; word-wrap:break-word; line-height: 1.3em; height: 4em;overflow:hidden;}
 .detail-main-visual .image-box {position:absolute;top:50%;right:50px;width:250px;border-radius:15px;overflow:hidden;box-shadow: 0px 0px 10px #555;transform:translateY(-50%);}
 .detail-main-visual .image-box img {width:100%}
-.detail-main-visual .info-list {display:flex;width:50%;position: absolute;bottom:50px;left:50px;}
+.detail-main-visual .info-list {display:flex;width:50%;position: absolute;bottom:50px;left:50px;right:50px;}
 .detail-main-visual .info-list li {display:flex;flex-direction:column; flex:1;}
 .detail-main-visual .info-list .tit {color:#ccc;font-size: 16px;font-weight:300;}
 .detail-main-visual .info-list .info {color:#ccc;}
@@ -49,6 +49,7 @@ li {list-style: none;}
 .detail-info-list strong {display:inline-block; width:100px;}
 
 .vidio-box {width:100%;margin-top:50px;overflow:auto;white-space: nowrap;}
+.vidio-box iframe {width:400px;height:200px;}
 .vidio-box iframe:not(:first-child) {margin-left:20px;}
 
 /*cast*/
@@ -58,6 +59,13 @@ li {list-style: none;}
 .cast-info-box {padding:15px;}
 .s-name {color:#aaa;font-size:20px;}
 .name {color:#fff;font-size:25px;}
+
+/*search content*/
+.search-movie-list {}
+.list-item {width:300px;padding:20px;background-size:100%;background-position:center;background-color:#ccc;}
+
+
+
 /*ANT***********************************************/
 /*header*/
 .ant-layout-header {display:flex;justify-content: space-between;align-items:center;padding-left:20px !important;}
@@ -70,6 +78,23 @@ li {list-style: none;}
 .ant-rate-star:not(:last-child) {margin-right:25px !important;}
 .ant-rate-star {transform: scale(1.5);}
 
-@media screen and (max-width:800px) {
-    .content {background:#000;}
+@media screen and (max-width:950px) {
+    .ant-layout-content {margin:10px;}
+    .ant-layout-header {padding-right:20px;}
+    .hover-box {display:none;}
+    .movie-main-content {height:300px;}
+    .movie-list .desc {font-size:13px;}
+    .detail-main-visual .bg-content {height:300px;}
+    .detail-main-visual .image-box {display:none;}
+    .detail-main-visual .title {display:block;width:auto;height:auto;font-size:28px;top:20px;right:20px;left:20px;}
+    .detail-main-visual .info-list {width:auto;bottom:20px;right:10px;left:10px;}
+    .detail-main-visual .info-list li {align-items:center;}
+    .detail-main-visual .info-list .tit {font-size:12px;}
+    .detail-main-visual .info-list .info {font-size:12px;}
+    .detail-main-visual .info-list .info strong {font-size:24px;}
+    .movie-detail-content .tag-line {font-size:20px;}
+    .movie-detail-content .desc {font-size:13px;}
+    .vidio-box iframe {width:250px;height:150px;}
+    .detail-info-list li {font-size: 13px;}
+    .detail-info-list strong {width:85px;}
 }

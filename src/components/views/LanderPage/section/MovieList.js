@@ -7,7 +7,7 @@ import { Rate } from "antd"
 function MovieList(props) {
     function onClickDetailPage(e) {
         props.history.push(`/detail/${e.target.parentNode.dataset.id}`)
-        props.history.go()
+        window.location.reload()
     }
     return (
         <div
@@ -18,7 +18,7 @@ function MovieList(props) {
             <div
                 className="movie-img"
                 style={{
-                    backgroundImage: `url(${IMAGE_BASE_URL}w300/${props.movieInfo.backdrop_path})`,
+                    backgroundImage: `url(${IMAGE_BASE_URL}w500/${props.movieInfo.poster_path})`,
                 }}
             ></div>
             <div className="movie-info">
