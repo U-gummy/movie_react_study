@@ -21,7 +21,6 @@ function DetailPage(props) {
     const credits = `${API_URL}movie/${movId}/credits?api_key=${API_KEY}&language=ko`
     const videos = `${API_URL}movie/${movId}/videos?api_key=${API_KEY}&language=ko`
     const similar = `${API_URL}movie/${movId}/similar?api_key=${API_KEY}&language=ko`
-    // /credits
     useEffect(function () {
         Axios.get(endpoint).then(function (response) {
             setMainMovie(response.data)

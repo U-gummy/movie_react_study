@@ -2,7 +2,7 @@
 
 import React from "react"
 import { IMAGE_BASE_URL } from "../../../Config"
-import { Row, Col, Empty, Button, List, Avatar, Collapse } from "antd"
+import { List, Avatar, Collapse } from "antd"
 
 const { Panel } = Collapse
 function Cast(props) {

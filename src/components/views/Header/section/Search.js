@@ -22,10 +22,6 @@ function Search() {
                 onSearch={(value) => console.log(value)}
                 style={{ width: 200 }}
             />
-            {/* <input type="text" className="h-search"></input>
-            <button type="button" className="btn btn-search">
-                검색
-            </button> */}
         </form>
     )
 }

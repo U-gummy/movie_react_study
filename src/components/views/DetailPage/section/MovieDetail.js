@@ -3,8 +3,6 @@
 import React from "react"
 import Video from "./Video"
 function MovieDetail(props) {
-    console.log("!!!!!!! ", props.data)
-    console.log("vvvvvvv ", props.dataVideos)
     return (
         <div className="movie-detail-content">
             <h3 className="tag-line">{props.data.tagline}</h3>

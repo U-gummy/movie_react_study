@@ -5,8 +5,7 @@ import MainMovie from "./section/MainMovie"
 import { API_URL, API_KEY } from "../../Config"
 import MovieList from "./section/MovieList"
 import Axios from "axios"
-import { Tabs, Row, Col, Button } from "antd"
-import { Link } from "react-router-dom"
+import { Tabs, Row, Col } from "antd"
 
 const { TabPane } = Tabs
 
@@ -91,7 +90,13 @@ function LanderPage(props) {
                                             )
                                         })}
                                 </Row>
-                                <Button onClick={onClickHandler}>더보기</Button>
+                                <button
+                                    type="button"
+                                    className="btn"
+                                    onClick={onClickHandler}
+                                >
+                                    더보기
+                                </button>
                             </div>
                         </TabPane>
                     )
