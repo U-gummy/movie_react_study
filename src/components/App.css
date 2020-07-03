@@ -61,9 +61,10 @@ li {list-style: none;}
 .name {color:#fff;font-size:25px;}
 
 /*search content*/
-.search-movie-list {}
-.list-item {width:300px;padding:20px;background-size:100%;background-position:center;background-color:#ccc;}
-
+.list-item {padding:20px;}
+.list-item .image-box {position:relative;border-radius:10px;background-color:#000;overflow:hidden;}
+.list-item .image-box img {width:100%;opacity:0.8;}
+.list-item .image-box .tit-type {position: absolute;right:0;bottom:0;left:0;padding:3px 5px;color:#fff;background:rgba(0,0,0,0.5);z-index: 1;}
 
 
 /*ANT***********************************************/

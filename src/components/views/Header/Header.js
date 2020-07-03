@@ -4,9 +4,7 @@ import React, { useEffect, useState } from "react"
 import "./Header.css"
 // import Search from "./section/Search"
 import { Link } from "react-router-dom"
-import { API_URL, API_KEY } from "../../Config"
 import { withRouter } from "react-router-dom"
-import Axios from "axios"
 import { Input } from "antd"
 function Header(props) {
     const { Search } = Input
@@ -18,6 +16,7 @@ function Header(props) {
                     placeholder="input search text"
                     onSearch={function (value) {
                         props.history.push(`/search/${value}`)
+                        window.location.reload()
                     }}
                     style={{ width: 200 }}
                 />
