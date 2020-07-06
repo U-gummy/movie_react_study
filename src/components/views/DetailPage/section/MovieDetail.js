@@ -2,7 +2,9 @@
 
 import React from "react"
 import Video from "./Video"
+import Review from "./Review";
 function MovieDetail(props) {
+    console.log("data",props.dataReview);
     return (
         <div className="movie-detail-content">
             <h3 className="tag-line">{props.data.tagline}</h3>
@@ -31,6 +33,7 @@ function MovieDetail(props) {
                 </li>
             </ul>
             <Video data={props.dataVideos.results}></Video>
+            <Review data={props.dataReview}></Review>
         </div>
     )
 }

@@ -16,11 +16,13 @@ function DetailPage(props) {
     const [CreditsInfo, setCreditsInfo] = useState(null)
     const [Videos, setVideos] = useState(null)
     const [Similar, setSimilar] = useState(null)
+    const [Reviews, setReviews] = useState(null)
     const movId = props.match.params.movId
-    const endpoint = `${API_URL}movie/${movId}?api_key=${API_KEY}&language=ko`
-    const credits = `${API_URL}movie/${movId}/credits?api_key=${API_KEY}&language=ko`
-    const videos = `${API_URL}movie/${movId}/videos?api_key=${API_KEY}&language=ko`
-    const similar = `${API_URL}movie/${movId}/similar?api_key=${API_KEY}&language=ko`
+    const endpoint = `${API_URL}movie/${movId}?api_key=${API_KEY}`
+    const credits = `${API_URL}movie/${movId}/credits?api_key=${API_KEY}`
+    const videos = `${API_URL}movie/${movId}/videos?api_key=${API_KEY}`
+    const similar = `${API_URL}movie/${movId}/similar?api_key=${API_KEY}`
+    const reviews = `${API_URL}movie/${movId}/reviews?api_key=${API_KEY}`
     useEffect(function () {
         Axios.get(endpoint).then(function (response) {
             setMainMovie(response.data)
@@ -34,12 +36,15 @@ function DetailPage(props) {
         Axios.get(similar).then(function (response) {
             setSimilar(response.data)
         })
+        Axios.get(reviews).then(function (response) {
+            setReviews(response.data)
+        })
     }, [])
     let tabList = [
         {
             name: "영화상세정보",
-            component: Videos && (
-                <MovieDetail data={MainMovie} dataVideos={Videos} />
+            component: Videos && Reviews && (
+                <MovieDetail data={MainMovie} dataVideos={Videos} dataReview={Reviews} />
             ),
         },
         {
