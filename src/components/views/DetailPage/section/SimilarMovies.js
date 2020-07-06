@@ -4,7 +4,6 @@ import React from "react"
 import MovieList from "../../LanderPage/section/MovieList"
 import { Row, Col } from "antd"
 function SimilarMovies(props) {
-    console.log("sisisisisisisi", props.data)
     return (
         <div>
             <Row gutter={[16, 24]}>

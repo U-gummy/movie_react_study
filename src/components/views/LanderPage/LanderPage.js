@@ -6,6 +6,7 @@ import { API_URL, API_KEY } from "../../Config"
 import MovieList from "./section/MovieList"
 import Axios from "axios"
 import { Tabs, Row, Col } from "antd"
+import InfiniteScroll from "react-infinite-scroll-component"
 
 const { TabPane } = Tabs
 
@@ -70,33 +71,42 @@ function LanderPage(props) {
                                 ></MainMovie>
                             )}
                             <div className="movie-list-content">
-                                <Row gutter={[16, 24]}>
-                                    {MainMovieList &&
-                                        MainMovieList.map(function (item, idx) {
-                                            return (
-                                                <Col
-                                                    key={idx}
-                                                    xs={24}
-                                                    sm={12}
-                                                    md={8}
-                                                    lg={6}
-                                                    xl={6}
-                                                >
-                                                    <MovieList
-                                                        movieInfo={item}
+                                <InfiniteScroll
+                                    dataLength={MainMovieList.length}
+                                    next={onClickHandler}
+                                    hasMore={true}
+                                >
+                                    <Row gutter={[16, 24]}>
+                                        {MainMovieList &&
+                                            MainMovieList.map(function (
+                                                item,
+                                                idx
+                                            ) {
+                                                return (
+                                                    <Col
                                                         key={idx}
-                                                    ></MovieList>
-                                                </Col>
-                                            )
-                                        })}
-                                </Row>
-                                <button
+                                                        xs={24}
+                                                        sm={12}
+                                                        md={8}
+                                                        lg={6}
+                                                        xl={6}
+                                                    >
+                                                        <MovieList
+                                                            movieInfo={item}
+                                                            key={idx}
+                                                        ></MovieList>
+                                                    </Col>
+                                                )
+                                            })}
+                                    </Row>
+                                </InfiniteScroll>
+                                {/* <button
                                     type="button"
                                     className="btn"
                                     onClick={onClickHandler}
                                 >
                                     더보기
-                                </button>
+                                </button> */}
                             </div>
                         </TabPane>
                     )

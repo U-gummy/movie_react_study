@@ -11,7 +11,6 @@ function ModalPop(props) {
         window.location.reload()
     }
     function handleCancel(e) {
-        console.log(e)
         setVisible(false)
         props.onClose()
     }
@@ -24,9 +23,7 @@ function ModalPop(props) {
             onCancel={handleCancel}
         >
             <Row gutter={[16, 16]} className="search-movie-list">
-                {/* known_for */}
                 {props.data.known_for.map(function (item, i) {
-                    console.log(item, "item")
                     if (item.media_type == "movie" && item.poster_path) {
                         return (
                             <Col className="list-item" key={i} span={8}>

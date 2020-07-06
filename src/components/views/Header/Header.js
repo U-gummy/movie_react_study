@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react"
 import "./Header.css"
-// import Search from "./section/Search"
 import { Link } from "react-router-dom"
 import { withRouter } from "react-router-dom"
 import { Input } from "antd"

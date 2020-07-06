@@ -32,7 +32,6 @@ function DetailPage(props) {
             setVideos(response.data)
         })
         Axios.get(similar).then(function (response) {
-            console.log("similar", response.data)
             setSimilar(response.data)
         })
     }, [])

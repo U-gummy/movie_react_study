@@ -6,7 +6,6 @@ import { List, Avatar, Collapse } from "antd"
 
 const { Panel } = Collapse
 function Cast(props) {
-    console.log("cast.......", props.data)
     function getList(data) {
         return (
             <List
