@@ -5,7 +5,7 @@ import { withRouter } from "react-router-dom"
 import { API_URL, API_KEY, IMAGE_BASE_URL } from "../../Config"
 import Axios from "axios"
 import { Row, Col } from "antd"
-import ModalPop from "./p/ModalPop"
+import ModalPop from "./section/ModalPop"
 import InfiniteScroll from "react-infinite-scroll-component"
 function SearchPage(props) {
     const searchWord = props.match.params.searchWord
@@ -36,7 +36,6 @@ function SearchPage(props) {
     function onClickHandler() {
         getSearchList(Page)
     }
-    console.log(List, "list")
     return (
         <div>
             {ModalInfo && (

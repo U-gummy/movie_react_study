@@ -10,14 +10,7 @@ function MainMovie(props) {
             style={{
                 backgroundImage: `url(${IMAGE_BASE_URL}w1280/${props.mainImage.backdrop_path})`,
             }}
-        >
-            <div className="movie-main-text-box">
-                <strong className="title">
-                    {props.mainImage.original_title}
-                </strong>
-                <p className="desc">{props.mainImage.overview}</p>
-            </div>
-        </div>
+        ></div>
     )
 }
 

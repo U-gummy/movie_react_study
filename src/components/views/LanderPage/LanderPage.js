@@ -17,15 +17,15 @@ function LanderPage(props) {
             urlKey: "now_playing",
         },
         {
-            name: "인기순 영화",
+            name: "인기순",
             urlKey: "popular",
         },
         {
-            name: "평점순 영화",
+            name: "평점순",
             urlKey: "top_rated",
         },
         {
-            name: "상영예정 영화",
+            name: "상영예정작",
             urlKey: "upcoming",
         },
     ]
@@ -61,15 +61,13 @@ function LanderPage(props) {
 
     return (
         <div>
+            {MainMovieImage && (
+                <MainMovie mainImage={MainMovieImage}></MainMovie>
+            )}
             <Tabs defaultActiveKey="0" onChange={callback}>
                 {tabList.map(function (item, idx) {
                     return (
                         <TabPane tab={item.name} key={idx}>
-                            {MainMovieImage && (
-                                <MainMovie
-                                    mainImage={MainMovieImage}
-                                ></MainMovie>
-                            )}
                             <div className="movie-list-content">
                                 <InfiniteScroll
                                     dataLength={MainMovieList.length}
@@ -100,13 +98,6 @@ function LanderPage(props) {
                                             })}
                                     </Row>
                                 </InfiniteScroll>
-                                {/* <button
-                                    type="button"
-                                    className="btn"
-                                    onClick={onClickHandler}
-                                >
-                                    더보기
-                                </button> */}
                             </div>
                         </TabPane>
                     )

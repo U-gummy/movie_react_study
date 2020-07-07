@@ -10,14 +10,7 @@ function SimilarMovies(props) {
                 {props.data.results &&
                     props.data.results.map(function (item, idx) {
                         return (
-                            <Col
-                                key={idx}
-                                xs={24}
-                                sm={24}
-                                md={12}
-                                lg={8}
-                                xl={8}
-                            >
+                            <Col key={idx} xs={24} sm={12} md={8} lg={6} xl={6}>
                                 <MovieList
                                     movieInfo={item}
                                     key={idx}

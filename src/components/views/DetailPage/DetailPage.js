@@ -44,7 +44,11 @@ function DetailPage(props) {
         {
             name: "영화상세정보",
             component: Videos && Reviews && (
-                <MovieDetail data={MainMovie} dataVideos={Videos} dataReview={Reviews} />
+                <MovieDetail
+                    data={MainMovie}
+                    dataVideos={Videos}
+                    dataReview={Reviews}
+                />
             ),
         },
         {

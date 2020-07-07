@@ -8,6 +8,7 @@ function Video(props) {
             {props.data.map(function (item, idx) {
                 return (
                     <iframe
+                        key={idx}
                         src={`https://www.youtube.com/embed/${item.key}`}
                     ></iframe>
                 )
