@@ -1,5 +1,5 @@
 # The Movie DB API 
-> https://yougmi.github.io/movie_react_study
+> https://u-gummy.github.io/movie_react_study
 #
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
